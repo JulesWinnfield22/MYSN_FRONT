@@ -1,0 +1,7 @@
+#verifyAccount .AB_INPUT_FIELD {
+	@apply border p-2 rounded-md text-dark-blue
+}
+
+#verifyAccount button {
+	@apply px-6 py-2 bg-blue-600 text-white text-sm uppercase rounded
+}

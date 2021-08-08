@@ -1,0 +1,82 @@
+.rounded-image {
+	box-shadow: 0 0 0 4px #ddd;
+	transition: transform .4s linear;
+} 
+
+.img-container {
+	bottom: -4rem;
+	left: 4rem;
+}
+
+.profile-info {
+	max-width: var(--max-width)
+}
+
+.image-uploader {
+	right: 0;
+	top: 5rem;
+	background-color: #000009;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 0 10px -2px #000;
+	color: #ddd;
+}
+
+.image-uploader, .image-uploader * {
+	cursor: pointer;	
+}
+
+.image-uploader input {
+	display: none;
+}
+
+@media(max-width: 625px) {
+	.img-container {
+		left: calc(50% - 4rem)
+	}
+
+	.btn-collection {
+		margin-top: 4.2rem;
+		justify-content: center;
+	}
+
+	.friends {
+		padding: 0 6px;
+	}
+}
+
+@media(max-width: 625px) {
+	.edit div.AB_INPUT_CONTAINER { 
+		width: 90.667%;
+	}
+}
+
+.edit .AB_INPUT_CONTAINER {
+	width: 90%;
+	border-radius: 3px;
+	overflow: hidden;
+	@apply shadow;
+}
+
+.edit .AB_INPUT_FIELD {
+	height: 2.25rem;
+}
+
+.edit .AB_INPUT_FIELD, .edit .AB_TEXTAREA {
+	width: 100%;
+	background-color: #ddd;
+	@apply px-2
+}
+
+input::placeholder, textarea::placeholder {
+	color: #0007;
+}
+
+.edit .AB_TEXTAREA {
+	height: 100%;
+	resize: none;
+}

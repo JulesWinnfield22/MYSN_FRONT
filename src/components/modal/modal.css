@@ -1,0 +1,45 @@
+.error_message_modal::after {
+	content: '';
+	position: absolute;
+	width: 5px;
+	height: 100%;
+	left: 0;
+	@apply bg-red-500;
+}
+
+.error_message_modal {
+	top: 3rem;
+	right: 3rem;
+	background: white;
+	box-shadow: 0 0 10px -3px #0007;
+	border-radius: 5px;
+	overflow: hidden;
+	transform: translateY(-6rem);
+	opacity: 0;
+	margin: 0 auto;
+	animation-name: move_down;
+	animation-duration: .5s;
+	animation-timing-function: linear;
+	z-index: 1000;
+	animation-fill-mode: forwards;
+	padding: 0 15px;
+}
+
+@keyframes move_up {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes move_down {
+	to {
+		opacity: 1;
+		transform: translateY(0rem);
+	}
+}
+
+#rootModal {
+	display: flex;
+	justify-content: center
+}

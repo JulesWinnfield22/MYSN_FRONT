@@ -1,0 +1,130 @@
+:root {
+	--max-width: 38rem;
+}
+
+#grid {
+	display: grid;
+	grid-template-rows: 4rem 1fr;
+	grid-template-columns: minmax(10rem, 18rem) 1fr minmax(10rem, 22rem);
+	grid-template-areas: 
+		"nav nav nav"
+		"left main right"
+		"left main right"
+}
+
+#navbar {
+	grid-row: nav-start / nav-end;
+	grid-column: nav-start / nav-end;
+}
+
+#sidepanel {
+	grid-row: left-start / left-end;
+	grid-column: left-start / left-end;
+}
+
+#main {
+	grid-row: main-start / main-end;
+	grid-column: main-start / main-end;
+}
+
+#rightside {
+	grid-row: right-start / right-end;
+	grid-column: right-start / right-end;
+}
+
+#whatsonyourmind, .post {
+	width: 100%;
+	max-width: var(--max-width)
+}
+
+@media(max-width: 1150px) {
+	#grid {
+		grid-template-rows: 4rem 1fr;
+		grid-template-columns: 1fr minmax(10rem, 22rem);
+		grid-template-areas: 
+			"nav nav"
+			"main right"
+			"main right"
+	}
+
+	#sidepanel {
+		position: absolute;
+    inset: 0;
+		transition: transform .03s linear;
+		background-color: #0005;
+	}
+
+	.move_panel_left {
+		transform: translateX(-100%);
+	}
+
+	#sidepanel > :first-child {
+		width: 18rem;
+	}
+}
+
+@media(max-width: 880px) {
+	#grid {
+		grid-template-rows: max-content 1fr;
+		grid-template-columns: 1fr;
+		grid-template-areas: 
+			"nav"
+			"main"
+			"main"
+	}
+
+	#rightside {
+		display: none;
+	}
+}
+
+@media(max-width: 632px) {
+	#navbar {
+		flex-direction: column;
+		align-items: flex-start;
+		height: auto;
+		min-width: 360px;
+	}
+
+	#navbar > * {
+		width: 100%;
+	}
+
+	#navbar > :last-child {
+		justify-content: center;
+	}
+
+	#main {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@media(max-width: 465px) {
+	#whatsonyourmind > :last-child button {
+		flex-direction: column;
+		padding: 3px 0;
+	}
+
+	#whatsonyourmind > :last-child span {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	#whatsonyourmind > :last-child {
+		padding: 5px 0;
+	}
+
+	#whatsonyourmind > :last-child span {
+		margin-left: 0;
+		margin-top: 2px;
+	}
+}
+
+@media(max-width: 435px) {
+
+	.icons {
+		justify-content: space-around;
+	}
+}
